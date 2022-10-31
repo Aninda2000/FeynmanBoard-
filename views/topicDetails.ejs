@@ -1,0 +1,48 @@
+<h2>Topic Name: <%= topic.topicName %></h2>
+<h3>content</h3>
+<link rel="stylesheet" href="/topicDetail.css">
+<div id="content-list-container">
+    <ol id="content-list">
+        <div class="col">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text"></p>
+              <div class="d-flex justify-content-between align-items-center">
+               <%= topic.text %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Topic parts :</h3>
+        <% for(let subtopic of topic.content) { %>
+            <div class="album py-5 bg-light">
+                <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                    <div class="card shadow-sm">
+                        
+                        <div class="card-body">
+                        <p class="card-text"><%= subtopic.content %></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            <a type="button" class="btn btn-sm btn-success" href="/update/4/<%= subtopic._id %>">UNDERSTOOD</a>
+                            <a type="button" class="btn btn-sm btn-primary" href="/update/3/<%= subtopic._id %>">SOMEWHAT UNDERSTOOD</a>
+                            <a type="button" class="btn btn-sm btn-warning" href="/update/2/<%= subtopic._id %>">NOT CLEAR</a>
+                            <a type="button" class="btn btn-sm btn-danger" href="/update/1/<%= subtopic._id %>">WHAT RUBBISH</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <li >                   
+    
+                
+            </li>
+            
+        <% } %>
+    </ol>
+</div>

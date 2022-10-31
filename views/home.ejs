@@ -1,18 +1,16 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-</head>
-<body>
-    <form action="/dashboard">
-        <input type="text" name="userName" >
-        <button type="submit">Enter</button>
+<!-- <form action="/create-user" method="post">
+    <input type="text" name="userName" >
+    <button type="submit"> Enter </button>
+</form> -->
+<div class="container-sm">
+    <form  action="/create-user" method="post" class="form-signin">
+      
+      <h1 class="h3 mb-3 font-weight-normal">Please Enter Your User-Name To Continue</h1>
+      <label for="userName" class="sr-only">User Name</label>
+      <input type="text" id="userName" class="form-control" placeholder="john123" name="userName" required>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Continue</button>
+      
     </form>
-    
-    
-</body>
-</html>
+</div>

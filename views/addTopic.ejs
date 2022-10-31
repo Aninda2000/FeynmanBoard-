@@ -1,0 +1,20 @@
+<style>
+    input{
+        border-radius: 4px;
+    }
+    textarea{
+        border-radius: 4px;
+    }
+</style>
+<form action="/create-new-topic" method="post">
+    <input type="text" name="title" placeholder="add Title"/>
+    <div>
+        <label for="content">Add your Content</label>
+        <br>
+
+        <textarea id="content" name="content" rows="4" cols="50" placeholder="add your content">    
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Add your content</button>
+</form>
+

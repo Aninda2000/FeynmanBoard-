@@ -6,14 +6,25 @@ const topicSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    content: {
+    content: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "subTopics",
+      },
+    ],
+    text: {
       type: String,
       required: true,
     },
-
-    userName: {
-      type: String,
-      required: true,
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Users",
+    },
+    currentPoints: {
+      type: Number,
+    },
+    percentage: {
+      type: Number,
     },
   },
   {
