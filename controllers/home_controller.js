@@ -92,6 +92,7 @@ module.exports.createTopic = async function (req, res) {
           content: [],
           user: user._id,
           text: req.body.content,
+          percentage: 0,
         });
         newTopic.content = await createSubContent(
           req.body.content,

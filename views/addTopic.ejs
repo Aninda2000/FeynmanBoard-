@@ -4,7 +4,10 @@
     }
     textarea{
         border-radius: 4px;
+        margin: 0;
+        padding: 5px;
     }
+    
 </style>
 <form action="/create-new-topic" method="post">
     <input type="text" name="title" placeholder="add Title"/>
@@ -12,7 +15,7 @@
         <label for="content">Add your Content</label>
         <br>
 
-        <textarea id="content" name="content" rows="4" cols="50" placeholder="add your content">    
+        <textarea id="content" name="content" rows="4" cols="50" >    
         </textarea>
     </div>
     <button type="submit" class="btn btn-success">Add your content</button>

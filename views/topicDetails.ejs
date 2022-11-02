@@ -1,31 +1,45 @@
 <h2>Topic Name: <%= topic.topicName %></h2>
 <h3>content</h3>
 <link rel="stylesheet" href="/topicDetail.css">
-<div id="content-list-container">
+
+<div id="content-list-container p-0 m-0">
     <ol id="content-list">
         <div class="col">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <p class="card-text"></p>
-              <div class="d-flex justify-content-between align-items-center">
-               <%= topic.text %>
+          <div class="card shadow-sm p-0 m-0">
+            <div class="card-body p-0 m-0">
+              <p class="card-text m-0" style="margin-left:10px;" ></p>
+              <div class="p-0 m-0 " style="background-color:grey;font-size: 25px ; border-radius:8px;  padding: 5px;">
+               <% for(let subtopic of topic.content) { %>
+                    <% if(subtopic.points == 4) { %> <span style="color:green ;"><%=subtopic.content%>.</span> 
+                    <% } else if(subtopic.points == 3) { %> <span style="color:blue ;"><%=subtopic.content%> .</span> 
+                    <% }else if(subtopic.points == 2) { %> <span style="color:yellow ;"><%=subtopic.content%>. </span> 
+                    <% } else if(subtopic.points == 1) { %> <span style="color:red ;"><%=subtopic.content%>. </span> 
+                    <% } else { %> <span><%=subtopic.content%></span> <% } %>
+                <% } %>
               </div>
             </div>
           </div>
         </div>
         <h3>Topic parts :</h3>
         <% for(let subtopic of topic.content) { %>
-            <div class="album py-5 bg-light">
+            <div class="album py-5 bg-light d-flex">
                 <div class="container">
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                     <div class="card shadow-sm">
                         
-                        <div class="card-body">
-                        <p class="card-text"><%= subtopic.content %></p>
+                        <div class="card-body" style="background-color: rgb(185, 182, 182);">
+                        
+                            <% if(subtopic.points == 4) { %> <span style="color:green ; "><%=subtopic.content%></span> 
+                            <% } else if(subtopic.points == 3) { %> <span style="color:blue ;"><%=subtopic.content%> </span> 
+                            <% }else if(subtopic.points == 2) { %> <span style="color:rgb(244, 244, 10) ;"><%=subtopic.content%> </span> 
+                            <% } else if(subtopic.points == 1) { %> <span style="color:red ;"><%=subtopic.content%> </span> 
+                            <% } else { %> <span><%=subtopic.content%></span> <% } %>
+                        
+                        
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
+                            <div class="btn-group d-flex">
                             <a type="button" class="btn btn-sm btn-success" href="/update/4/<%= subtopic._id %>">UNDERSTOOD</a>
                             <a type="button" class="btn btn-sm btn-primary" href="/update/3/<%= subtopic._id %>">SOMEWHAT UNDERSTOOD</a>
                             <a type="button" class="btn btn-sm btn-warning" href="/update/2/<%= subtopic._id %>">NOT CLEAR</a>
