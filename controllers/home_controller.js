@@ -57,7 +57,7 @@ async function createSubContent(content, topic) {
     for (i = 0; i < content.length; i++) {
       for (let j = 0; j < symbol.length; j++) {
         if (content.charAt(i) == symbol[j]) {
-          let sentence = content.substring(start, i);
+          let sentence = content.substring(start, i + 1);
           let subtopic = await SubTopics.create({
             content: sentence,
             topic: topic._id,
@@ -68,13 +68,16 @@ async function createSubContent(content, topic) {
         }
       }
     }
-    let sentence = content.substring(start, i);
-    let subtopic = await SubTopics.create({
-      content: sentence,
-      topic: topic._id,
-      points: 0,
-    });
-    arr.push(subtopic);
+    if (start < content.length) {
+      let sentence = content.substring(start, i + 1);
+      let subtopic = await SubTopics.create({
+        content: sentence,
+        topic: topic._id,
+        points: 0,
+      });
+      arr.push(subtopic);
+    }
+    
     return arr;
   } catch (err) {
     console.log(`Error in creating subcontent******${err}`);

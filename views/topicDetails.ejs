@@ -10,10 +10,10 @@
               <p class="card-text m-0" style="margin-left:10px;" ></p>
               <div class="p-0 m-0 " style="background-color:grey;font-size: 25px ; border-radius:8px;  padding: 5px;">
                <% for(let subtopic of topic.content) { %>
-                    <% if(subtopic.points == 4) { %> <span style="color:green ;"><%=subtopic.content%>.</span> 
-                    <% } else if(subtopic.points == 3) { %> <span style="color:blue ;"><%=subtopic.content%> .</span> 
-                    <% }else if(subtopic.points == 2) { %> <span style="color:yellow ;"><%=subtopic.content%>. </span> 
-                    <% } else if(subtopic.points == 1) { %> <span style="color:red ;"><%=subtopic.content%>. </span> 
+                    <% if(subtopic.points == 4) { %> <span style="color:green ;"><%=subtopic.content%> &nbsp</span> 
+                    <% } else if(subtopic.points == 3) { %> <span style="color:blue ;"><%=subtopic.content%> &nbsp</span> 
+                    <% }else if(subtopic.points == 2) { %> <span style="color:yellow ;"><%=subtopic.content%>&nbsp </span> 
+                    <% } else if(subtopic.points == 1) { %> <span style="color:red ;"><%=subtopic.content%> &nbsp</span> 
                     <% } else { %> <span><%=subtopic.content%></span> <% } %>
                 <% } %>
               </div>
